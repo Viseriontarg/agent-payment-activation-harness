@@ -1,0 +1,49 @@
+{
+  "label": "baseline-without-guardrails",
+  "scenarioCount": 4,
+  "correctlyClassified": 1,
+  "unnecessarySettlementAttempts": 0,
+  "unhandledErrors": 3,
+  "runs": [
+    {
+      "id": "happy-path",
+      "expectedOutcome": "ACTIVATED",
+      "actualOutcome": "ACTIVATED",
+      "matched": true,
+      "metrics": {
+        "resourceRequests": 2,
+        "settlementAttempts": 1
+      }
+    },
+    {
+      "id": "missing-wallet",
+      "expectedOutcome": "MISSING_WALLET",
+      "actualOutcome": "UNHANDLED_ERROR",
+      "matched": false,
+      "metrics": {
+        "resourceRequests": 1,
+        "settlementAttempts": 0
+      }
+    },
+    {
+      "id": "wrong-network",
+      "expectedOutcome": "WRONG_NETWORK",
+      "actualOutcome": "UNHANDLED_ERROR",
+      "matched": false,
+      "metrics": {
+        "resourceRequests": 1,
+        "settlementAttempts": 0
+      }
+    },
+    {
+      "id": "insufficient-funds",
+      "expectedOutcome": "INSUFFICIENT_FUNDS",
+      "actualOutcome": "UNHANDLED_ERROR",
+      "matched": false,
+      "metrics": {
+        "resourceRequests": 1,
+        "settlementAttempts": 0
+      }
+    }
+  ]
+}

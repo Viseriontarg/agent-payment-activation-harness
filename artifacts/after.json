@@ -1,0 +1,49 @@
+{
+  "label": "hardened-activation",
+  "scenarioCount": 4,
+  "correctlyClassified": 4,
+  "unnecessarySettlementAttempts": 0,
+  "unhandledErrors": 0,
+  "runs": [
+    {
+      "id": "happy-path",
+      "expectedOutcome": "ACTIVATED",
+      "actualOutcome": "ACTIVATED",
+      "matched": true,
+      "metrics": {
+        "resourceRequests": 2,
+        "settlementAttempts": 1
+      }
+    },
+    {
+      "id": "missing-wallet",
+      "expectedOutcome": "MISSING_WALLET",
+      "actualOutcome": "MISSING_WALLET",
+      "matched": true,
+      "metrics": {
+        "resourceRequests": 0,
+        "settlementAttempts": 0
+      }
+    },
+    {
+      "id": "wrong-network",
+      "expectedOutcome": "WRONG_NETWORK",
+      "actualOutcome": "WRONG_NETWORK",
+      "matched": true,
+      "metrics": {
+        "resourceRequests": 1,
+        "settlementAttempts": 0
+      }
+    },
+    {
+      "id": "insufficient-funds",
+      "expectedOutcome": "INSUFFICIENT_FUNDS",
+      "actualOutcome": "INSUFFICIENT_FUNDS",
+      "matched": true,
+      "metrics": {
+        "resourceRequests": 1,
+        "settlementAttempts": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "agent-payment-activation-harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A deterministic clean-room harness for validating an agent-payment SDK's first successful tool call and its critical setup failures.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/activation.test.js",
+    "benchmark": "npm run build && node dist/scripts/benchmark.js",
+    "verify": "npm test && npm run benchmark"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
